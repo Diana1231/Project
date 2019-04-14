@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <style>
+html{
+  background:  darkslateblue;
+}
+
+div{
+  font-size: 15px;
+  border-radius: 25px;
+  display:block;
+  margin: 0px auto 0px;
+  padding: 0px 50px 0px;
+  width: 1000px;
+  background:  gray;
+}
+
+img:hover {
+  opacity: 5;
+}
+table{
+  table-layout: fixed;
+}
+
+tbody tr:hover {
+  background-color: darkgray;
+}
+    </style>
+</head>
+<body>
+<form name = "passdataa" action="." method ="get">
+<table align="center" >
+  <tr>
+      <td><font size="5">{{ userInput}} recipes</font>
+          <button type="submit" >Search Another Recipe</button></td>
+  </tr>
+</table>
+<div>
+<table align = "center">
+  <tr>&nbsp </tr>
+  <tr>&nbsp</tr>
+  <tr width ="100%" align="center">
+      <td width ="15%">Recipe Name</td>
+      <td width="25%">Ingredients</td>
+      <td>Cook Time(Minutes)</td>
+      <td>Image</td>
+  </tr>
+{% for i in recepies %}
+
+    <tr>
+
+        <td>
+             {{ i["recipeName"] }}
+        </td>
+        <td>
+            {% for j in i["ingredients"] %}
+            {{ j }},
+            {% endfor %}
+        </td>
+        <td align="center">
+             {{ i["recipeCookTime"] }}
+        </td>
+        <td align = "center">
+            <a href="{{ i["recipeLink" ]}}"> <img src="{{ i["imageUrl"] }}"></a>
+        </td>
+
+
+    </tr>
+    <tr></tr>
+
+
+
+
+
+{% endfor %}
+</table>
+</div>
+</form>
+</body>
+</html>
