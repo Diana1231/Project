@@ -8,6 +8,16 @@ html{
   background:  AliceBlue;
 }
 
+.bar{
+  font-size: 15px;
+  font-family: Georgia;
+  border-radius: 25px;
+  display:block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+
+}
 div{
   font-size: 15px;
   font-family: Georgia;
@@ -16,29 +26,30 @@ div{
   margin: 0px auto 0px;
   padding: 0px 50px 0px;
   width: 1000px;
-  background:  AliceBlue;
+  background: rgba(255,245,238,1.0);
 }
-
 img:hover {
   opacity: 5;
 }
 table{
   table-layout: fixed;
+  align-content: center;
 }
-
 tbody tr:hover {
   background-color: White;
+}
+h4{
+    text-align: center;
 }
     </style>
 </head>
 <body>
 <form name = "passdataa" action="." method ="get">
-<table align="center" >
-  <tr>
-      <td><font size="5">{{ userInput}} recipes</font>
-          <button type="submit" >Search Another Recipe</button></td>
-  </tr>
-</table>
+<div class="bar">
+    <h4><font size="5">{{ userInput}} recipes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+    <button type="submit" >Search Another Recipe</button>
+    </h4>
+</div>
 <div>
 <table align = "center">
   <tr>&nbsp </tr>
